@@ -40,11 +40,15 @@ public class cambioNivel : MonoBehaviour {
         {
             nuevoNivel = nivelActual.Substring(nivelActual.Length - 2, 1);
 
+            print(nuevoNivel + " " + (char.Parse(nuevoNivel) + 1));
+
+            nuevoNivel = (char)(((int)(char.Parse(nuevoNivel))) + 1) + "";
+
             print(nuevoNivel);
 
-            nuevoNivel = (char.Parse(nuevoNivel) + 1) + "";
-
             nuevoNivel = nivelActual.Substring(0, nivelActual.Length - 2) + nuevoNivel + "1";
+
+            print("cargando: " + nuevoNivel);
 
             if (Application.CanStreamedLevelBeLoaded(nuevoNivel))
             {
